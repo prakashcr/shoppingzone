@@ -40,7 +40,7 @@ body {
 			</button>
 		</div>
 		<div class="container">
-			<a class="navbar-brand"> CRICKET WORLDS</a> 
+			<a class="navbar-brand"> CRICKET WORLD</a> 
 			<a class="navbar-brand" href="#"><img src="" class="img-round"
 				height="30px" width="50px"></a>
 		</div>
@@ -48,6 +48,7 @@ body {
 			<ul class="nav navbar-nav">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span>home</a></li>
 				<li><a href="#"><span class="glyphicon glyphicon-list"></span>category</a></li>
+				<li><a href="addproduct"><span class="glyphicon glyphicon-list"></span>add product</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="register"><span class="glyphicon glyphicon-user"></span>

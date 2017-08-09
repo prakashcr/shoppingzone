@@ -1,77 +1,76 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="springForm"
 	uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page isELIgnored="FALSE"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Add product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<c:set var="contextRoot" value="${pagecontext.request.contextRoot}">
+</c:set>
 </head>
+
 <body>
+
 	<div class="container">
-		<h2 style="text-align: center; color: red;">Add Product</h2>
+		<h2 style="text-align: center; color: purple;">UPDATE PRODUCT</h2>
 		<div class="col-lg-12">
 			<div class="row">
 				<br>
-				<springForm:form action="./saveproduct" modelAttribute="product"
-					method="POST" class="form-horizontal">
-
-
-
+				<springForm:form action="${contextRoot}/saveproduct" method="POST"
+					modelAttribute="products">
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right" path="pname">PRODUCTNAME</springForm:label>
+							style="text-align:right;" path="pname">Product Name:</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
-
-							<springForm:input class="form-control" path="pname" />
+							<springForm:input path="pname" class="form-control"
+								value="${products.pname}" placeholder="Enter product name" />
 						</div>
 					</div>
-
-					<div class="form-group">
-						<springForm:label class="control-label col-sm-4"
-							style="text-align:right" path="price">PRICE</springForm:label>
-						<div class="control-label col-sm-4 col-sm-4">
-
-							<springForm:input class="form-control" path="price" />
-						</div>
-					</div>
-
-
-
-					<div class="form-group">
-						<springForm:label path="stock" style="text-align:right"
-							class="control-label col-sm-4">STOCK</springForm:label>
-						<div class="control-label col-sm-4 col-sm-4">
-
-							<springForm:input class="form-control" path="stock" />
-
-						</div>
-					</div>
-
 					<br>
-			
+					<br>
+					<br>
+					<div class="form-group">
+						<springForm:label class="control-label col-sm-4"
+							style="text-align:right;" path="Stock">Stock:</springForm:label>
+						<div class="control-label col-sm-4 col-sm-4">
+							<springForm:input path="stock" class="form-control"
+								value="${products.stock}" placeholder="Enter stock" />
+						</div>
+					</div>
+					<br>
+					<br>
+					<div class="form-group">
+						<springForm:label class="control-label col-sm-4"
+							style="text-align:right;" path="Price">price:</springForm:label>
+						<div class="control-label col-sm-4 col-sm-4">
+							<springForm:input path="price" class="form-control"
+								value="${products.price}" placeholder="Enter price" />
+						</div>
+					</div>
+					<br>
+					<br>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="text-center">
-
-								<input type="submit" class="btn btn-info btn-lg" value="Submit" />
+								<input type="submit" class="btn btn-info btn-lg" value="submit" />
 							</div>
 						</div>
 					</div>
 
+
 				</springForm:form>
-
-
-
 			</div>
 		</div>
 	</div>
