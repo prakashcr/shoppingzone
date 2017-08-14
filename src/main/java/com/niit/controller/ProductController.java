@@ -26,7 +26,7 @@ public class ProductController {
 
 	@RequestMapping(value = "/saveproduct", method = RequestMethod.POST)
 	public String DefaultPage(@ModelAttribute Product product, Model model) {
-		productdao.saveproduct(product);
+		productdao.saveProduct(product);
 		return "redirect:/productlist";
 	}
 
@@ -36,18 +36,29 @@ public class ProductController {
 		model.addAttribute("products", product);
 		return "productlist";
 	}
-	@RequestMapping(value="/deleteProduct/{pid}")
-	public String deleteProduct(@PathVariable int pid){
+
+	@RequestMapping(value = "/deleteProduct/{pid}")
+	public String deleteProduct(@PathVariable int pid) {
 		productdao.deleteProduct(pid);
-		return "ProductList";
-}
-	@RequestMapping(value="/editProduct/{pid}")
-	public String editProduct(@PathVariable int pid, Model model)
-	{   System.out.println("in edit controller");
-		Product product=productdao.getProductById(pid);
+		return "productlist";
+	}
+
+	@RequestMapping(value = "/all/product/editProduct/{pid}")
+	public String editProduct(@PathVariable int pid, Model model) {
+		System.out.println("in edit controller");
+		Product product = productdao.getProductById(pid);
 		model.addAttribute("products", product);
-		System.out.println("pid value is :"+pid);
-		return"updateproduct";
+		System.out.println("pid value is :" + pid);
+		return "updateproduct";
+	}
+
+	@RequestMapping(value = "/all/product/updateProduct")
+	public String updatePage(@ModelAttribute Product product){
+		productdao.updateProduct(product);
+		return "productlist";
 	}
 
 	}
+	
+
+

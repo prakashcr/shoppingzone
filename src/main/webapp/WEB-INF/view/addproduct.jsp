@@ -46,6 +46,16 @@
 					</div>
 
 
+					<div class="form-group">
+						<springForm:label path="brandname" style="text-align:right"
+							class="control-label col-sm-4">BRANDNAME</springForm:label>
+						<div class="control-label col-sm-4 col-sm-4">
+
+							<springForm:input class="form-control" path="brandname" />
+
+						</div>
+					</div>
+
 
 					<div class="form-group">
 						<springForm:label path="stock" style="text-align:right"
@@ -58,7 +68,7 @@
 					</div>
 
 					<br>
-			
+
 					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="text-center">

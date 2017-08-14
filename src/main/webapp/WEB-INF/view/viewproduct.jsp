@@ -25,7 +25,6 @@
     <td><c:out value="${prod.pid}"/></td>
     <td><c:out value="${prod.pname}"/></td>
     <td><c:out value="${prod.price}"/></td>
-    <td><c:out value="${prod.brandname}"/></td>
     <td><c:out value="${prod.stock}"/></td>
   </tr>
   </c:forEach>

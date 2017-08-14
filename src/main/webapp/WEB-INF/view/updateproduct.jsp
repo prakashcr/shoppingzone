@@ -17,22 +17,20 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<c:set var="contextRoot" value="${pagecontext.request.contextRoot}">
-</c:set>
+<c:url value="/all/product/updateProduct" var="url"/>
 </head>
 
 <body>
 
 	<div class="container">
-		<h2 style="text-align: center; color: purple;">UPDATE PRODUCT</h2>
+		<h2 style="text-align: center; color: red;">UPDATE PRODUCT</h2>
 		<div class="col-lg-12">
 			<div class="row">
 				<br>
-				<springForm:form action="${contextRoot}/saveproduct" method="POST"
-					modelAttribute="products">
+				<springForm:form action="${url}" modelAttribute="products">
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right;" path="pname">Product Name:</springForm:label>
+							style="text-align:right;" path="pname">PRODUCT NAME</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
 							<springForm:input path="pname" class="form-control"
 								value="${products.pname}" placeholder="Enter product name" />
@@ -41,22 +39,33 @@
 					<br>
 					<br>
 					<br>
+					<springForm:input type="hidden" path="pid"/>
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right;" path="Stock">Stock:</springForm:label>
+							style="text-align:right;" path="Price">PRICE</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
-							<springForm:input path="stock" class="form-control"
-								value="${products.stock}" placeholder="Enter stock" />
+							<springForm:input path="price" class="form-control"
+								value="${products.price}" placeholder="Enter price" />
 						</div>
 					</div>
 					<br>
 					<br>
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right;" path="Price">price:</springForm:label>
+							style="text-align:right;" path="brandname">BRANDNAME</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
-							<springForm:input path="price" class="form-control"
-								value="${products.price}" placeholder="Enter price" />
+							<springForm:input path="brandname" class="form-control"
+								value="${products.brandname}" placeholder="Enter Brandname" />
+						</div>
+					</div>
+					<br>
+					<br>
+					<div class="form-group">
+						<springForm:label class="control-label col-sm-4"
+							style="text-align:right;" path="Stock">STOCK</springForm:label>
+						<div class="control-label col-sm-4 col-sm-4">
+							<springForm:input path="stock" class="form-control"
+								value="${products.stock}" placeholder="Enter stock" />
 						</div>
 					</div>
 					<br>
