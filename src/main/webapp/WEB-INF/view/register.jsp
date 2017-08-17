@@ -31,14 +31,14 @@
 
 
 					<div class="form-group">
-						<springForm:label class="control-label col-sm-3" path="userName">NAME</springForm:label>
+						<springForm:label class="control-label col-sm-3" path="userName">NAME:</springForm:label>
 						<div class="col-sm-8">
 							<springForm:input class="form-control" placeholder="Enter name"
 								path="userName" />
 						</div>
 					</div>
 					<div class="form-group">
-						<springForm:label class="control-label col-sm-3" path="emailid">EMAILID</springForm:label>
+						<springForm:label class="control-label col-sm-3" path="emailid">EMAILID:</springForm:label>
 						<div class="col-sm-8">
 							<springForm:input class="form-control" placeholder="Enter Mailid"
 								path="emailid" />

@@ -27,6 +27,13 @@ UserDao userDao;
 		userDao.saveUser(user);
 return "login";
 }
+	@RequestMapping(value="/login")
+	public String goToPage(Model model)
+	{
+		model.addAttribute("user",new User());
+		return "login";
+		}
+	
 }
 
 

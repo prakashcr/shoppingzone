@@ -20,12 +20,12 @@ public class ProductController {
 
 	@RequestMapping(value = "/addproduct")
 	public String goToaddproductPage(Model model) {
-		model.addAttribute("product", new Product());
+		model.addAttribute("product", new Product()); 
 		return "addproduct";
 	}
 
 	@RequestMapping(value = "/saveproduct", method = RequestMethod.POST)
-	public String DefaultPage(@ModelAttribute Product product, Model model) {
+	public String DefaultPage(@ModelAttribute Product product) {
 		productdao.saveProduct(product);
 		return "redirect:/productlist";
 	}
@@ -55,7 +55,8 @@ public class ProductController {
 	@RequestMapping(value = "/all/product/updateProduct")
 	public String updatePage(@ModelAttribute Product product){
 		productdao.updateProduct(product);
-		return "productlist";
+		System.out.println("product is upated");
+		return "redirect:/body";
 	}
 
 	}
