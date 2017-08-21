@@ -1,5 +1,9 @@
 package com.niit.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.dao.ProductDao;
 import com.niit.model.Product;
@@ -20,13 +25,25 @@ public class ProductController {
 
 	@RequestMapping(value = "/addproduct")
 	public String goToaddproductPage(Model model) {
-		model.addAttribute("product", new Product()); 
+		model.addAttribute("product", new Product());
 		return "addproduct";
 	}
 
 	@RequestMapping(value = "/saveproduct", method = RequestMethod.POST)
 	public String DefaultPage(@ModelAttribute Product product) {
+	
 		productdao.saveProduct(product);
+		MultipartFile image = product.getImage();
+		Path path = Paths.get("C:\\Users\\COMPUTER\\workspace 2\\shoppingzone\\src\\main\\webapp\\resources\\image\\"
+				+ product.getPid() + ".jpg");
+		try {
+			image.transferTo(new File(path.toString()));
+		} catch (IllegalStateException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return "redirect:/productlist";
 	}
 
@@ -53,13 +70,22 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/all/product/updateProduct")
-	public String updatePage(@ModelAttribute Product product){
+	public String updatePage(@ModelAttribute Product product) {
 		productdao.updateProduct(product);
+		
+		MultipartFile image = product.getImage();
+		Path path = Paths.get("C:\\Users\\COMPUTER\\workspace 2\\shoppingzone\\src\\main\\webapp\\resources\\image\\"
+				+ product.getPid() + ".jpg");
+		try {
+			image.transferTo(new File(path.toString()));
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		System.out.println("product is upated");
 		return "redirect:/body";
 	}
 
-	}
-	
-
-
+}

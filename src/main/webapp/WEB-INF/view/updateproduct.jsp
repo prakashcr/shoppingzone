@@ -18,7 +18,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<c:url value="/all/product/updateProduct" var="url"/>
+<c:url value="/all/product/updateProduct" var="url" />
 </head>
 
 <body>
@@ -28,7 +28,8 @@
 		<div class="col-lg-12">
 			<div class="row">
 				<br>
-				<springForm:form action="${url}" modelAttribute="products">
+				<springForm:form action="${url}" modelAttribute="products"
+					enctype="multipart/form-data">
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
 							style="text-align:right;" path="pname">PRODUCT NAME</springForm:label>
@@ -40,7 +41,7 @@
 					<br>
 					<br>
 					<br>
-					<springForm:input type="hidden" path="pid"/>
+					<springForm:input type="hidden" path="pid" />
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
 							style="text-align:right;" path="Price">PRICE</springForm:label>
@@ -72,14 +73,22 @@
 					<br>
 					<br>
 					<div class="form-group">
+
+						<springForm:label path="image" style="text-align:right"
+							class="control-label col-sm-4">UPLOAD AN IMAGE</springForm:label>
+						<div class="control-label col-sm-4 col-sm-4">
+							<springForm:input type="file"  
+								path="image" />
+						</div>
+					</div>
+					<br>
+					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="text-center">
 								<input type="submit" class="btn btn-info btn-lg" value="submit" />
 							</div>
 						</div>
 					</div>
-
-
 				</springForm:form>
 			</div>
 		</div>

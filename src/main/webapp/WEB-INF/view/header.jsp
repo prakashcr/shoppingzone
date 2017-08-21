@@ -15,11 +15,11 @@
 <style>
 .navbar {
 	font-style: italic;
-	background-color: rgba(red, green, blue, alpha);
+	background-color: black;
 	margin-bottom: 00px;
-	border-radius: 0px;
-	background-image:
-		url("https://www.transparenttextures.com/patterns/gravel.png");
+	border-radius: 00px;
+background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
+
 }
 
 body {
@@ -40,8 +40,8 @@ body {
 			</button>
 		</div>
 		<div class="container">
-			<a class="navbar-brand" href="#"><img src="resouces\image\logo.jpg" 
-				height="30px" width="50px"></a>
+		<a class="navbar-brand"><img src="resources\image\logo1.jpg"></a>
+		<a class="navbar-brand">CRICKET WORLD</a>	
 		</div>
 		<div class="nav navbar-nav">
 			<ul class="nav navbar-nav">

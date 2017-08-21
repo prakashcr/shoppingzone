@@ -22,8 +22,8 @@
 		<div class="col-lg-12">
 			<div class="row">
 				<br>
-				<springForm:form action="./saveproduct" modelAttribute="product"
-					method="POST" class="form-horizontal">
+				<springForm:form action="saveproduct" modelAttribute="product"
+					enctype="multipart/form-data" method="POST" class="form-horizontal">
 
 
 
@@ -66,7 +66,15 @@
 
 						</div>
 					</div>
-
+					
+					<div class="form-group">
+						<springForm:label path="image" style="text-align:right"
+							class="control-label col-sm-4">UPLOAD AN IMAGE</springForm:label>
+						<div class="control-label col-sm-4 col-sm-4">
+							<springForm:input type="file"  
+								path="image" />
+						</div>
+					</div>
 					<br>
 
 					<div class="form-group">
