@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="springForm"
@@ -21,7 +22,7 @@
 <body>
 	<%@ include file="header.jsp"%>
 	<div class="container">
-		<h1>Registration</h1>
+		<h1>PLEASE REGISTER!!</h1>
 		<div class="col-lg-12">
 			<div class="row">
 
@@ -67,7 +68,12 @@
 					<div class="form-group">
 						<div class="col-sm-10">
 							<div class="text-center">
-								<input type="submit" class="btn btn-info btn-lf" value="Submit" />
+								<button class="btn btn-primary" data-dismiss="modal"
+									type="button">Cancel</button>
+
+								<div class="col-sm-10">
+									<button class="btn btn-primary" type="submit" id="register">Register</button>
+								</div>
 							</div>
 						</div>
 					</div>

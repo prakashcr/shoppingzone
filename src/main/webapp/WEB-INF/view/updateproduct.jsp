@@ -73,6 +73,21 @@
 					<br>
 					<br>
 					<div class="form-group">
+				<springForm:label class="control-label col-sm-4"
+					style="text-align:right; color:maroon;" path="">Select category:</springForm:label>
+				<div class="control-label col-sm-4 col-sm-4">
+					<springForm:select class="form-control" path="category.cid">
+						<springForm:option value="0" label="----select category----" />
+						<c:forEach var="c" items="${cat}">
+							<springForm:option value="${c.cid}" label="${c.catname}" />
+						</c:forEach>
+					</springForm:select>
+
+				</div>
+			</div>
+			<br>
+			<br>
+					<div class="form-group">
 
 						<springForm:label path="image" style="text-align:right"
 							class="control-label col-sm-4">UPLOAD AN IMAGE</springForm:label>

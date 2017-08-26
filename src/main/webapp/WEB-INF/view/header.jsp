@@ -14,7 +14,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 .navbar {
-	font-style: italic;
+	font-style: inherit;
 	background-color: black;
 	margin-bottom: 00px;
 	border-radius: 00px;
@@ -46,7 +46,7 @@ body {
 		<div class="nav navbar-nav">
 			<ul class="nav navbar-nav">
 				<li><a href="#"><span class="glyphicon glyphicon-home"></span>home</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-list"></span>category</a></li>
+				<li><a href="addcategory"><span class="glyphicon glyphicon-list"></span>add category</a></li>
 				<li><a href="addproduct"><span class="glyphicon glyphicon-list"></span>add product</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

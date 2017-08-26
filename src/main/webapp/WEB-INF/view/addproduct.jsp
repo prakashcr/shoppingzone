@@ -3,6 +3,9 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="springForm"
 	uri="http://www.springframework.org/tags/form"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
+<%@ page isELIgnored="FALSE"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -17,6 +20,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 	<div class="container">
 		<h2 style="text-align: center; color: red;">Add Product</h2>
 		<div class="col-lg-12">
@@ -27,12 +31,17 @@
 
 
 
+
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
 							style="text-align:right" path="pname">PRODUCTNAME</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
 
 							<springForm:input class="form-control" path="pname" />
+							
+							<div class="has-error">
+								<springForm:errors path="pname" cssClass="error">fill this</springForm:errors>
+							</div>
 						</div>
 					</div>
 
@@ -66,13 +75,27 @@
 
 						</div>
 					</div>
-					
+					<br>
+					<div class="form-group">
+				<springForm:label class="control-label col-sm-4"
+					style="text-align:right;" path="">SELECT CATEGORY</springForm:label>
+				<div class="control-label col-sm-4 col-sm-4">
+					<springForm:select class="form-control" path="category.cid">
+						<springForm:option value="0" label="----select category----" />
+						<c:forEach var="c" items="${cat}">
+							<springForm:option value="${c.cid}" label="${c.catname}" />
+						</c:forEach>
+					</springForm:select>
+
+				</div>
+			</div>
+			<br>
+
 					<div class="form-group">
 						<springForm:label path="image" style="text-align:right"
 							class="control-label col-sm-4">UPLOAD AN IMAGE</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
-							<springForm:input type="file"  
-								path="image" />
+							<springForm:input type="file" path="image" />
 						</div>
 					</div>
 					<br>
@@ -81,7 +104,7 @@
 						<div class="col-sm-12">
 							<div class="text-center">
 
-								<input type="submit" class="btn btn-info btn-lg" value="Submit" />
+								<input type="submit" class="btn btn-primary btn-lg" value="Submit" />
 							</div>
 						</div>
 					</div>
@@ -93,5 +116,6 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>

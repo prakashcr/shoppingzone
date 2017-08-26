@@ -19,7 +19,7 @@
 <body>
 	<%@ include file="header.jsp"%>
 	<div class="container">
-		<h2>Login Page</h2>
+		<h2> WELCOME TO LOGIN PAGE</h2>
 		<form action="#">
 			<div class="form-group">
 				<label for="email">Email:</label> <input type="email"
