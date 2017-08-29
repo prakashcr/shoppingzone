@@ -42,9 +42,9 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "/saveproduct", method = RequestMethod.POST)
-	public String DefaultPage(@Valid @ModelAttribute("product") Product product, BindingResult result, Model model) {
+	public String DefaultPage(@ModelAttribute("product") @Valid Product product, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("product", new Product());
+			model.addAttribute("product", product);
 			return "addproduct";
 
 		}

@@ -75,6 +75,6 @@ td {
 			</c:forEach>
 		</table>
 	</div>
-	s
+
 </body>
 </html>

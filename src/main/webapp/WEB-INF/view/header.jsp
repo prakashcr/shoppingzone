@@ -40,7 +40,7 @@ body {
 			</button>
 		</div>
 		<div class="container">
-		<a class="navbar-brand"><img src="resources\image\logo1.jpg"></a>
+		<a class="navbar-brand"><img src="resources\image\logo1.png"></a>
 		<a class="navbar-brand">CRICKET WORLD</a>	
 		</div>
 		<div class="nav navbar-nav">

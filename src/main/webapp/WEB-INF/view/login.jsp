@@ -16,23 +16,30 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<style>
+body {
+	background-color: black;
+	background-image:
+		url("https://www.transparenttextures.com/patterns/xv.png");
+}
+</style>
 <body>
-	<%@ include file="header.jsp"%>
+	
 	<div class="container">
-		<h2> WELCOME TO LOGIN PAGE</h2>
+		<h2 style="text-align: center;color:white;">WELCOME TO LOGIN PAGE</h2>
 		<form action="#">
 			<div class="form-group">
-				<label for="email">Email:</label> <input type="email"
+				<label for="email" style="text-align:center;color:white;">Email:</label> <input type="email"
 					class="form-control" id="email" placeholder="Enter email"
 					name="email">
 			</div>
 			<div class="form-group">
-				<label for="pwd">Password:</label> <input type="password"
+				<label for="pwd" style="text-align:center;color:white;">Password:</label> <input type="password"
 					class="form-control" id="pwd" placeholder="Enter password"
 					name="pwd">
 			</div>
 			<div class="checkbox">
-				<label><input type="checkbox" name="remember">
+				<label style="text-align:center;color:white;"><input type="checkbox" name="remember">
 					Remember me</label>
 			</div>
 			<button type="submit" class="btn btn-default">Submit</button>

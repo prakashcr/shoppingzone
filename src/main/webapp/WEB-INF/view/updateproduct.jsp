@@ -20,7 +20,13 @@
 
 <c:url value="/all/product/updateProduct" var="url" />
 </head>
-
+<style>
+body {
+	background-color: #0d0057;
+background-image: url("https://www.transparenttextures.com/patterns/xv.png");
+	
+}
+</style>
 <body>
 
 	<div class="container">
@@ -32,7 +38,7 @@
 					enctype="multipart/form-data">
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right;" path="pname">PRODUCT NAME</springForm:label>
+							style="text-align:right;color:white;" path="pname">PRODUCT NAME</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
 							<springForm:input path="pname" class="form-control"
 								value="${products.pname}" placeholder="Enter product name" />
@@ -44,7 +50,7 @@
 					<springForm:input type="hidden" path="pid" />
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right;" path="Price">PRICE</springForm:label>
+							style="text-align:right;color:white;" path="Price">PRICE</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
 							<springForm:input path="price" class="form-control"
 								value="${products.price}" placeholder="Enter price" />
@@ -54,7 +60,7 @@
 					<br>
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right;" path="brandname">BRANDNAME</springForm:label>
+							style="text-align:right;color:white;" path="brandname">BRANDNAME</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
 							<springForm:input path="brandname" class="form-control"
 								value="${products.brandname}" placeholder="Enter Brandname" />
@@ -64,7 +70,7 @@
 					<br>
 					<div class="form-group">
 						<springForm:label class="control-label col-sm-4"
-							style="text-align:right;" path="Stock">STOCK</springForm:label>
+							style="text-align:right;color:white;" path="Stock">STOCK</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
 							<springForm:input path="stock" class="form-control"
 								value="${products.stock}" placeholder="Enter stock" />
@@ -73,27 +79,27 @@
 					<br>
 					<br>
 					<div class="form-group">
-				<springForm:label class="control-label col-sm-4"
-					style="text-align:right; color:maroon;" path="">Select category:</springForm:label>
-				<div class="control-label col-sm-4 col-sm-4">
-					<springForm:select class="form-control" path="category.cid">
-						<springForm:option value="0" label="----select category----" />
-						<c:forEach var="c" items="${cat}">
-							<springForm:option value="${c.cid}" label="${c.catname}" />
-						</c:forEach>
-					</springForm:select>
+						<springForm:label class="control-label col-sm-4"
+							style="text-align:right;color:white;" path="">SELECT CATEGORY</springForm:label>
+						<div class="control-label col-sm-4 col-sm-4">
+							<springForm:select class="form-control" path="category.cid">
+								<springForm:option value="0" label="----select category----" />
+								<c:forEach var="c" items="${cat}">
+									<springForm:option value="${c.cid}" label="${c.catname}" />
+								</c:forEach>
+							</springForm:select>
 
-				</div>
-			</div>
-			<br>
-			<br>
+						</div>
+					</div>
+					<br>
+					<br>
+					<br>
 					<div class="form-group">
 
-						<springForm:label path="image" style="text-align:right"
+						<springForm:label path="image" style="text-align:right;color:white;"
 							class="control-label col-sm-4">UPLOAD AN IMAGE</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
-							<springForm:input type="file"  
-								path="image" />
+							<springForm:input type="file" path="image" />
 						</div>
 					</div>
 					<br>
