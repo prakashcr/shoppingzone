@@ -44,6 +44,7 @@ public class ProductController {
 	@RequestMapping(value = "/saveproduct", method = RequestMethod.POST)
 	public String DefaultPage(@ModelAttribute("product") @Valid Product product, BindingResult result, Model model) {
 		if (result.hasErrors()) {
+			model.addAttribute("cat", categorydao.retrieveAllCategory());
 			model.addAttribute("product", product);
 			return "addproduct";
 
@@ -87,6 +88,7 @@ public class ProductController {
 		System.out.println("in edit controller");
 		Product product = productdao.getProductById(pid);
 		model.addAttribute("products", product);
+		model.addAttribute("cat", categorydao.retrieveAllCategory());
 		System.out.println("pid value is :" + pid);
 		return "updateproduct";
 	}
