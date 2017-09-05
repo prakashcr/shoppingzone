@@ -80,7 +80,7 @@ public class ProductController {
 	@RequestMapping(value = "/deleteProduct/{pid}")
 	public String deleteProduct(@PathVariable int pid) {
 		productdao.deleteProduct(pid);
-		return "productlist";
+		return "redirect:/productlist";
 	}
 
 	@RequestMapping(value = "/all/product/editProduct/{pid}")
@@ -111,7 +111,7 @@ public class ProductController {
 		}
 
 		System.out.println("product is upated");
-		return "redirect:/body";
+		return "redirect:/productlist";
 	}
 
 }

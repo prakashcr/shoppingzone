@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>CRICKET WORLD</title>
-<meta charset ="utf-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,8 +18,7 @@
 	background-color: black;
 	margin-bottom: 00px;
 	border-radius: 00px;
-background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
-
+	background-image: url;
 }
 
 body {
@@ -31,31 +30,44 @@ body {
 
 <body>
 	<div class="navbar navbar-inverse ">
-	<div class="container-fluid">
-		<div class="navbar-header">
+		<div class="container-fluid">
+			<div class="navbar-header">
 
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-		</div>
-		<div class="container">
-		<a class="navbar-brand"><img src="resources\image\logo1.png"></a>
-		<a class="navbar-brand">CRICKET WORLD</a>	
-		</div>
-		<div class="nav navbar-nav">
-			<ul class="nav navbar-nav">
-				<li><a href="#"><span class="glyphicon glyphicon-home"></span>home</a></li>
-				<li><a href="addcategory"><span class="glyphicon glyphicon-list"></span>add category</a></li>
-				<li><a href="addproduct"><span class="glyphicon glyphicon-list"></span>add product</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="register"><span class="glyphicon glyphicon-user"></span>
-						Register</a></li>
-				<li><a href="login"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
-		</div>
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#mynavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="container">
+				<a class="navbar-brand"><img src="resources\image\logo1.jpg\"></a>
+				<a class="navbar-brand" style="text-align: center; color: white;">CRICKET
+					WORLD</a>
+			</div>
+			<div class="nav navbar-nav">
+				<ul class="nav navbar-nav">
+					<li><a href="#" style="text-align: center; color: white;">
+							<span class="glyphicon glyphicon-home"
+							style="text-align: center; color: red;"></span> home
+					</a></li>
+					<li><a href="addcategory"
+						style="text-align: center; color: white;"><span
+							class="glyphicon glyphicon-list"
+							style="text-align: center; color: red;"></span> add category</a></li>
+					<li><a href="addproduct"
+						style="text-align: center; color: white;"><span
+							class="glyphicon glyphicon-list"
+							style="text-align: center; color: red;"></span> add product</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="register"
+						style="text-align: center; color: white;"><span
+							class="glyphicon glyphicon-user"
+							style="text-align: center; color: red;"></span> Register</a></li>
+					<li><a href="login" style="text-align: center; color: white;"><span
+							class="glyphicon glyphicon-log-in"
+							style="text-align: center; color: red;"></span> Login</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-	

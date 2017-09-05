@@ -18,7 +18,7 @@ public class UserController
 {
 @Autowired
 UserDao userDao;
-	@RequestMapping(value="/register")
+	@RequestMapping(value="/registerform")
 	public String goToRegisterPage(Model model)
 	{
 		model.addAttribute("user",new User());
