@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="url"%>
+<%@ page isELIgnored="FALSE"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,27 +29,34 @@ body {
 }
 </style>
 <body>
-	
-	<div class="container">
-		<h2 style="text-align: center;color:white;">WELCOME TO LOGIN PAGE</h2>
-		<form action="#">
+	<c:url value="/j_spring_security_check" var="login"></c:url>
+	<form action="${login}" method="POST">
+		<div class="container">
+			<h2 style="text-align: center; color: white;">WELCOME TO LOGIN
+				PAGE</h2>
+			<c:if test="${error!=null}">
+				<div class="alert alert-warning">
+					<strong>check your username or password</strong>
+				</div>
+			</c:if>
 			<div class="form-group">
-				<label for="email" style="text-align:center;color:white;">Email:</label> <input type="email"
-					class="form-control" id="email" placeholder="Enter email"
-					name="email">
+				<label  style="text-align: center; color: white;">User:</label>
+				<input type="text" name="j_username" class="form-control"
+					placeholder="Enter username">
 			</div>
 			<div class="form-group">
-				<label for="pwd" style="text-align:center;color:white;">Password:</label> <input type="password"
-					class="form-control" id="pwd" placeholder="Enter password"
-					name="pwd">
+				<label style="text-align: center; color: white;">Password:</label>
+				<input type="password" name="j_password" class="form-control"
+					id="pwd" placeholder="Enter password" name="pwd">
 			</div>
 			<div class="checkbox">
-				<label style="text-align:center;color:white;"><input type="checkbox" name="remember">
-					Remember me</label>
+				<label style="text-align: center; color: white;"><input
+					type="checkbox" name="remember"> Remember me</label>
 			</div>
 			<button type="submit" class="btn btn-default">Submit</button>
-		</form>
-	</div>
+		</div>
+	</form>
 </body>
+
 
 </html>

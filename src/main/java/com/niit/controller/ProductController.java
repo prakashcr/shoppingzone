@@ -34,7 +34,7 @@ public class ProductController {
 	@Autowired
 	HttpServletRequest request;
 
-	@RequestMapping("/addproduct")
+	@RequestMapping("/admin/addproduct")
 	public String showAddProduct(Model model) {
 		model.addAttribute("cat", categorydao.retrieveAllCategory());
 		model.addAttribute("product", new Product());
@@ -76,14 +76,19 @@ public class ProductController {
 		model.addAttribute("products", product);
 		return "productlist";
 	}
-
-	@RequestMapping(value = "/deleteProduct/{pid}")
+	@RequestMapping("/all/product/viewProduct/{pid}")
+	public String getProductById(@PathVariable int id, Model model) {
+		Product product = productdao.getProductById(id);
+		model.addAttribute("product", product);
+		return "viewproduct";
+	}
+	@RequestMapping(value = "/admin/deleteProduct/{pid}")
 	public String deleteProduct(@PathVariable int pid) {
 		productdao.deleteProduct(pid);
 		return "redirect:/productlist";
 	}
 
-	@RequestMapping(value = "/all/product/editProduct/{pid}")
+	@RequestMapping(value = "/admin/all/product/editProduct/{pid}")
 	public String editProduct(@PathVariable int pid, Model model) {
 		System.out.println("in edit controller");
 		Product product = productdao.getProductById(pid);

@@ -19,6 +19,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<c:set var="contextRoot" value="${pageContext.request.contextPath }"></c:set>
 <style>
 body {
 	background-color:black;
@@ -32,7 +33,7 @@ body {
 		<div class="col-lg-12">
 			<div class="row">
 				<br>
-				<springForm:form action="saveproduct" modelAttribute="product"
+				<springForm:form action="${contextRoot}/saveproduct" modelAttribute="product"
 					enctype="multipart/form-data" method="POST" class="form-horizontal">
 
 

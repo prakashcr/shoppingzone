@@ -1,6 +1,8 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="FALSE"%>
 <!DOCTYPE head PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,7 +31,8 @@ td {
 
 	<h2>PRODUCTLIST</h2>
 	<div class="container">
-		<table class="table table-responsive table-hover table-bordered table-stripped"
+		<table
+			class="table table-responsive table-hover table-bordered table-stripped"
 			id='mytable'>
 			<thead>
 				<tr>
@@ -67,10 +70,18 @@ td {
 					<td><c:out value="${p.price}" /></td>
 					<c:url value="/resources/image/${p.pid}.jpg " var="url" />
 					<td><img src="${url}" height="100" width="80"></td>
-					<td align="center"><a
-						href=<c:url value="/all/product/editProduct/${p.pid}"/>>Edit</a>|<a
-						href="/viewProduct/${p.pid}">View</a> | <a
-						href=<c:url value="/deleteProduct/${p.pid}"/>>Delete</a></td>
+					<td align="center">
+					<a href=<c:url value="/all/product/viewProduct/${p.pid}"/>>View</a>
+		<c:if test="${pageContext.request.userPrincipal.name !=null }">
+							<security:authorize access="hasRole('ROLE_ADMIN')">
+				<a	href=<c:url value="/admin/all/product/editProduct/${p.pid}"/>>Update</a> 
+				</security:authorize></c:if>
+				<c:if test="${pageContext.request.userPrincipal.name !=null }">
+				<security:authorize access="hasRole('ROLE_ADMIN')">
+				<a  href=<c:url value="/admin/deleteProduct/${p.pid}"/>>Delete</a>
+				</security:authorize></c:if>
+				
+					</td>
 				</tr>
 			</c:forEach>
 		</table>

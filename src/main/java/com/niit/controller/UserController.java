@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.niit.dao.UserDao;
 import com.niit.model.User;
@@ -18,11 +19,25 @@ public class UserController
 {
 @Autowired
 UserDao userDao;
-	@RequestMapping(value="/registerform")
+	@RequestMapping(value="/register")
 	public String goToRegisterPage(Model model)
 	{
 		model.addAttribute("user",new User());
 		return "register";
+		}
+	@RequestMapping(value="/login")
+	public String goToPage(@RequestParam(required=false)boolean Login,Model model)
+	{
+		if(Login==false)
+		{
+			model.addAttribute("error","login failed");
+		}
+		else
+		{
+			model.addAttribute("error", null);
+		}
+	
+		return "login";
 		}
 	@RequestMapping(value="/register", method = RequestMethod.POST)
 	public String LoginPage( @ModelAttribute("user") @Valid User user,BindingResult result, Model model){
@@ -33,12 +48,6 @@ UserDao userDao;
 		userDao.saveUser(user);
 return "login";
 }
-	@RequestMapping(value="/login")
-	public String goToPage(Model model)
-	{
-		model.addAttribute("user",new User());
-		return "login";
-		}
 	
 }
 
