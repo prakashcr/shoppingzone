@@ -89,18 +89,14 @@ public class CartController {
 			cartItem.setSubTotalCost(cartItem.getSubQty() * cartItem.getProduct().getPrice());
 			cartItem.setCart(cart);
 			System.out.println("-------Cart item  created--------");
-			try {
+	
 				cartItems = cart.getCartItems();//cart items already present
 				System.out.println("-------Cart item fetched--------");
 				if(cartItems==null){
 					cartItems = new ArrayList<CartItem>();//new cart item list created
 					System.out.println("-------New Cart item created--------");
 				}
-			} catch (NullPointerException e) {
-				e.printStackTrace();
-				cartItems = new ArrayList<CartItem>();//new cart item list created
-				System.out.println("-------New Cart item created--------");
-			}
+			
 			cartItems.add(cartItem);//cart item values are set
 			System.out.println("-------Cart items added to list--------");
 		}

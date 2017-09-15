@@ -48,7 +48,6 @@ td {
 						<th>PRODUCT NAME</th>
 						<th>QTY</th>
 						<th>SUB COST</th>
-						<th>ACTION</th>
 					</tr>
 				</thead>
 				<tbody>
