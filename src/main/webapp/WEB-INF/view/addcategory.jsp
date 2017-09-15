@@ -23,12 +23,15 @@ body {
 </style>
 </head>
 <body>
+	<%@ include file="header.jsp"%>
+	<br>
+	<br>
 	<div class="container">
 		<h2 style="text-align: center; color: red;">Add Category</h2>
 		<br>
 		<springForm:form action="${contextRoot}/savecat" method="POST"
 			modelAttribute="category">
-
+			<springForm:hidden path="cid" />
 			<div class="form-group">
 				<springForm:label class="control-label col-sm-4"
 					style="text-align:right" path="catname">ENTER CATEGORY</springForm:label>

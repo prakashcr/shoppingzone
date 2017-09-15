@@ -19,25 +19,26 @@
 	bottom: 0;
 	left: 0;
 	padding: 1rem;
-	background-color: black;
+	background-color:black;
 	text-align: center;
+	background-image: url();
 }
 </style>
 </head>
 <body>
 	<div class="container-fluid">
-		<footer class="w3-padding-64 w3-center w3-black w3-xlarge"> <label>CUSTOMER
+		<footer class="" style="color: black;"> <label>CUSTOMER
 			SERVICE</label>
 		<ul>
-			<li><a href="help"> Help</a></li>
-			<li><a href="aboutus"> About Us</a></li>
-			<li><a href="contactus"> Contact Us </a></li>
-			<li><a href="returnpolicy"> Return Policy </a></li>
+			<li><a href="help" > .Help</a></li>
+			<li><a href="aboutus"> .About Us</a></li>
+			<li><a href="contactus"> .Contact Us </a></li>
+			<li><a href="returnpolicy"> .Return Policy </a></li>
 		</ul>
 	
 
 	<div class="footer-bottom">
-		<p class="pull-left">Copyright@2017 CRICKET WORLD.COM All right
+		<p class="pull-left" style="color: black;">Copyright@2017 CRICKET WORLD.COM All right
 			reserved.</p>
 		<div class="pull-right"></div>
 	</div>

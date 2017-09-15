@@ -92,8 +92,7 @@ body {
 					<div class="form-group">
 						<div class="col-sm-10">
 							<div class="text-center">
-								<button class="btn btn-primary" data-dismiss="modal"
-									type="button">Cancel</button>
+								<button id="cancel" name="cancel" class="btn btn-primary"  value="1">Cancel</button>
 
 								<div class="col-sm-10">
 									<button class="btn btn-primary" type="submit" id="register">Register</button>

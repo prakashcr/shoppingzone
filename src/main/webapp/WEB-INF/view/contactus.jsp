@@ -1,10 +1,3 @@
-Skip to content Features Business Explore Marketplace Pricing This
-repository Search Sign in or Sign up Watch 0 Star 0 Fork 0
-bastinvivek/sportszone Code Issues 0 Pull requests 0 Projects 0 Insights
-Branch: master Find file Copy
-pathsportszone/sportszone/src/main/webapp/WEB-INF/view/contactus.jsp
-67e28bb on Jun 10 @bastinvivek bastinvivek sportszone1 1 contributor
-RawBlameHistory 48 lines (48 sloc) 1.89 KB
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -21,11 +14,12 @@ RawBlameHistory 48 lines (48 sloc) 1.89 KB
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <%@include file="header.jsp"%>
 </head>
+<body>
 <div class="container-fluid">
 	<div class="jumbotron jumbotron-sm"
 		style="background-color: #339966; margin-top: 2%; color: white;">
 		<div class="row">
-			<div class="col-sm-12 col-lg-12">
+			<div class="col-sm-08 col-lg-08">
 				<h1 class="h2" style="margin-top: -2%">Contact Us</h1>
 			</div>
 		</div>

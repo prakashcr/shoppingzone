@@ -45,6 +45,8 @@ UserDao userDao;
 		model.addAttribute("user",user);
 		return "register";
 		}
+		user.setRole("ROLE_USER");
+		user.setEnabled(true);
 		userDao.saveUser(user);
 return "login";
 }

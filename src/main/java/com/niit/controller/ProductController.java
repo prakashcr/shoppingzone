@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,10 +19,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.niit.dao.CategoryDao;
 import com.niit.dao.ProductDao;
+import com.niit.model.Category;
 import com.niit.model.Product;
 
 @Controller
@@ -36,7 +39,13 @@ public class ProductController {
 
 	@RequestMapping("/admin/addproduct")
 	public String showAddProduct(Model model) {
-		model.addAttribute("cat", categorydao.retrieveAllCategory());
+		List<Category> categories = new ArrayList<Category>();
+		
+		
+		for (Category c : categorydao.retrieveAllCategory()) {
+			categories.add(c);
+		}
+		model.addAttribute("categories",categories);
 		model.addAttribute("product", new Product());
 		return "addproduct";
 	}
@@ -56,7 +65,7 @@ public class ProductController {
 		Path path = Paths.get(imagepath + File.separator + product.getPid() + ".jpg");
 		File imageFile = new File(path.toString());
 		System.out.println("Path:" + path.toString());
-		if(!imageFile.exists()){
+		if (!imageFile.exists()) {
 			imageFile.mkdirs();
 		}
 		try {
@@ -76,12 +85,14 @@ public class ProductController {
 		model.addAttribute("products", product);
 		return "productlist";
 	}
+
 	@RequestMapping("/all/product/viewProduct/{pid}")
-	public String getProductById(@PathVariable int id, Model model) {
-		Product product = productdao.getProductById(id);
-		model.addAttribute("product", product);
+	public String getProductById(@PathVariable int pid, Model model) {
+		Product product = productdao.getProductById(pid);
+		model.addAttribute("products", product);
 		return "viewproduct";
 	}
+
 	@RequestMapping(value = "/admin/deleteProduct/{pid}")
 	public String deleteProduct(@PathVariable int pid) {
 		productdao.deleteProduct(pid);
