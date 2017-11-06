@@ -41,11 +41,6 @@ public class ProductController {
 	@RequestMapping("/admin/addproduct")
 	public String showAddProduct(Model model) {
 		List<Category> categories = new ArrayList<Category>();
-		
-		
-		for (Category c : categorydao.retrieveAllCategory()) {
-			categories.add(c);
-		}
 		model.addAttribute("categories",categories);
 		model.addAttribute("product", new Product());
 		return "addproduct";
