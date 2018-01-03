@@ -4,7 +4,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="springForm"
 	uri="http://www.springframework.org/tags/form"%>
-<%@page isELIgnored="false"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -31,15 +31,13 @@ td {
 </style>
 </head>
 <body>
-<%@ include file="header.jsp"%>
-<br>
-<br>
+	<%@ include file="header.jsp"%>
+	<br>
+	<br>
 	<div>
 		<div class="container">
-			<h3 style="text-align: center; color: red;">DETAILS OF PRODUCT 
-				</h3>
-			<table
-				class="table table-responsive  table-bordered">
+			<h3 style="text-align: center; color: red;">DETAILS OF PRODUCT</h3>
+			<table class="table table-responsive  table-bordered">
 				<tr>
 					<td>Product Name</td>
 					<td>${products.pname}</td>
@@ -71,20 +69,21 @@ Out Of Stock
 </c:if>
 			<c:if test="${products.stock!=0 }">
 				<c:url value="/cart/addtocart/${products.pid}" var="carturl"></c:url>
+				<security:authorize access="hasRole('ROLE_USER')">
+					<form action="${carturl}">
+						<button type="submit" class="btn btn-primary btn-lg">
+							<span class="glyphicon glyphicon-shopping-cart"></span> ADD TO
+							CART
+						</button>
 
-				<form action="${carturl}">
-					<button type="submit" class="btn btn-primary btn-lg">
-						<span class="glyphicon glyphicon-shopping-cart"></span> ADD TO
-						CART
-					</button>
-
-				</form>
+					</form>
+				</security:authorize>
 			</c:if>
-			<br>
-			<br>
+			<br> <br>
 			<div class="col-lg-12">
 				<c:url value="/productlist" var="url1"></c:url>
-				<a href="${url1}" style="text-align: center; color: black;"><span class="glyphicon glyphicon-arrow-left"></span> BACK TO PRODUCT LIST</a><br>
+				<a href="${url1}" style="text-align: center; color: black;"><span
+					class="glyphicon glyphicon-arrow-left"></span> BACK TO PRODUCT LIST</a><br>
 			</div>
 		</div>
 	</div>

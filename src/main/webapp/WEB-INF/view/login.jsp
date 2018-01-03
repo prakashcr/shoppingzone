@@ -36,7 +36,7 @@ body {
 			<h2 style="text-align: center; color: white;">WELCOME TO LOGIN
 				PAGE</h2>
 			<c:if test="${error!=null}">
-				<div class="alert alert-warning">
+				<div class="alert alert-danger">
 					<strong>check your username or password</strong>
 				</div>
 			</c:if>

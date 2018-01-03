@@ -48,7 +48,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="mynavbar">
 			<ul class="nav navbar-nav">
-				<li><a href="${contextroot/body}" style="text-align: center; color: white;">
+				<li><a href="${contextroot}/body" style="text-align: center; color: white;">
 						<span class="glyphicon glyphicon-home"
 						style="text-align: center; color: red;"></span> Home
 				</a></li>
@@ -70,7 +70,7 @@
 						</security:authorize>
 					</c:if></li>
 
-				<li><a href="productlist"
+				<li><a href="${contextroot}/productlist"
 					style="text-align: center; color: white;"><span
 						class="glyphicon glyphicon-gift"
 						style="text-align: center; color: red;"></span> ProductList</a></li>
@@ -102,7 +102,7 @@
 							${pageContext.request.userPrincipal.name }!!!</a></li>
 					<security:authorize access="hasRole('ROLE_USER')">
 
-						<li><a href="cart" style="text-align: center; color: white;"><span
+						<li><a href="cart/getcart" style="text-align: center; color: white;"><span
 								class="glyphicon glyphicon-shopping-cart"
 								style="text-align: center; color: red;"></span> Cart</a></li>
 					</security:authorize>

@@ -100,9 +100,10 @@ background-image: url("https://www.transparenttextures.com/patterns/xv.png");
 						<springForm:label path="image" style="text-align:right;color:white;"
 							class="control-label col-sm-4">UPLOAD AN IMAGE</springForm:label>
 						<div class="control-label col-sm-4 col-sm-4">
-							<springForm:input type="file" path="image" />
+							<springForm:input type="file" name="file" class="form-control"  path="image" />
 						</div>
 					</div>
+					<br>
 					<br>
 					<div class="form-group">
 						<div class="col-sm-12">

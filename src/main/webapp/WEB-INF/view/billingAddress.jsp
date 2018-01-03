@@ -1,29 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<flow xmlns="http://www.springframework.org/schema/webflow"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/webflow
-                          http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-	<var name="billingAddress" class="com.niit.model.BillingAddress" />
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@taglib prefix="springForm" uri="http://www.springframework.org/tags/form" %>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Billing address</title>
+</head>
+<body>
 
-	<input name="userId" />
 
-	<on-start>
-		<evaluate expression="flowHandler.initHandler(userId)"
-			result="billingAddress"></evaluate>
-	</on-start>
 
-	<view-state id="start" view="billingAddress" model="billingAddress">
-		<transition on="submit" to="submit_billing" />
-	</view-state>
-	<action-state id="submit_billing">
+<%@include file="header.jsp" %>
+<html>
+<head>
+<c:set var="contextRoot" value="${pageContext.request.contextPath }"></c:set>
 
-		<evaluate expression="flowHandler.saveBillAddress(billingAddress)" />
-		<transition to="thankYou" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
 
-	</action-state>
+<div class="container">
+  <div class="row">
 
-	<view-state id="thankYou" view="thankYou">
+    <div class="col-sm-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">Billing-CART</div>
+  <div class="panel-body"></div>
 
-	</view-state>
-</flow>
+
+
+<springForm:form modelAttribute="billingAddress"  class="form-horizontal">
+
+  <div class="form-group">
+  <springForm:label path="line1" class="control-label col-sm-3">Enter Streetname</springForm:label>
+ <div class="col-sm-8">
+<springForm:input path="line1" name="line1"/>
+<%-- <springForm:errors path="line1" cssStyle="color:red"></springForm:errors> --%>
+</div>
+</div>
+
+
+
+<div class="form-group">
+<springForm:label path="city" class="control-label col-sm-3">Enter city</springForm:label>
+ <div class="col-sm-8">
+ <springForm:input path="city" name="city"/>
+<springForm:errors path="city" cssStyle="color:red"></springForm:errors>
+</div>
+</div>
+
+
+<div class="form-group">
+<springForm:label path="state" class="control-label col-sm-3">Enter state</springForm:label>
+ <div class="col-sm-8">
+ <springForm:input path="state" name="state"/>
+<springForm:errors path="state" cssStyle="color:red"></springForm:errors>
+</div>
+</div>
+
+<div class="form-group">
+<springForm:label path="country" class="control-label col-sm-3">Enter country</springForm:label>
+ <div class="col-sm-8">
+ <springForm:input path="country" name="country"/>
+<springForm:errors path="country" cssStyle="color:red"></springForm:errors>
+</div>
+</div>
+
+<div class="form-group">
+<springForm:label path="pincode" class="control-label col-sm-3">Enter zipcode</springForm:label>
+ <div class="col-sm-8">
+ <springForm:input path="pincode" name="zipcode"/>
+<springForm:errors path="pincode" cssStyle="color:red"></springForm:errors>
+</div>
+</div>
+
+<div class="form-group">
+ <div class="col-sm-10">
+  <div class="text-center">
+ <input name="_eventId_submit" type="submit" value="Submit" /><br />>
+</div>
+</div>
+</div>
+
+</springForm:form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

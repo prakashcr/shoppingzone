@@ -18,9 +18,11 @@
 </head>
 <body>
 	<%@ include file="header.jsp"%>
-	
+
 	<div class="jumbotron">
-	<marquee>WELCOME TO THE CRICKET WORLD</marquee>
+		<marquee
+			style="color: red; font-size: xx-large;">WELCOME
+			TO THE CRICKET WORLD</marquee>
 	</div>
 
 	<div id="myCarousel" class="carousel slide" data-slide="carousel">

@@ -40,7 +40,7 @@ public class ProductController {
 
 	@RequestMapping("/admin/addproduct")
 	public String showAddProduct(Model model) {
-		List<Category> categories = new ArrayList<Category>();
+		List<Category> categories = categorydao.retrieveAllCategory();
 		model.addAttribute("categories",categories);
 		model.addAttribute("product", new Product());
 		return "addproduct";
@@ -49,7 +49,7 @@ public class ProductController {
 	@RequestMapping(value = "/saveproduct", method = RequestMethod.POST)
 	public String DefaultPage(@ModelAttribute("product") @Valid Product product, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("cat", categorydao.retrieveAllCategory());
+			model.addAttribute("categories", categorydao.retrieveAllCategory());
 			model.addAttribute("product", product);
 			return "addproduct";
 
@@ -75,7 +75,7 @@ public class ProductController {
 		return "redirect:/productlist";
 	}
 
-	@RequestMapping(value = "/productlist")
+	@RequestMapping("/productlist")
 	public String showAllProduct(Model model) {
 		List<Product> product = productdao.getAllProducts();
 		model.addAttribute("products", product);
